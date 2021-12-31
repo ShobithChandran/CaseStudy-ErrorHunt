@@ -9,10 +9,10 @@ loginRouter.get('/',function(req,res){
 })
 
 
-loginRouter.get("/check",function(req,res){
+loginRouter.get("/check",function(req,res){ 
     var checkuser = {
-        uid:req.param("uid"),
-        pwd:req.param("pwd")
+        uid:req.query("uid"), //Part #2 Point 10
+        pwd:req.query("pwd") //Part #2 Point 10
     };
     
     console.log(checkuser);

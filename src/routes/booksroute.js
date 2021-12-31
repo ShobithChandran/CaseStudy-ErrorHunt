@@ -66,7 +66,7 @@ booksRouter.get('/:id',function(req,res){
 
 
 //router to delete book
-booksRouter.post('/delete', function (req, res) {
+booksRouter.post('/delete', function (req, res) { //Part #2 Point 9
 
     const id = req.body.id;  
 
@@ -107,7 +107,7 @@ booksRouter.post('/edit', function (req, res) {
 
 
 //router to update book
-booksRouter.post('/update', function (req, res) {
+booksRouter.post('/update', function (req, res) { //Part #2 Point 9
 
     bookdata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
         if (err) {
