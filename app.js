@@ -1,9 +1,9 @@
 const express = require('express'); 
 const path = require ('path'); 
-const bodyparser = require('body-parser');
+const bodyparser = require('body-parser'); //part #1 point 2
 const cors = require('cors');
 const host = '0.0.0.0';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 const nav= [
     {
@@ -14,11 +14,11 @@ const nav= [
         link:"/addbook",title:"Add Book"},
     {
         link:"/addauthor",title:"Add Author"},
-];
+]; //Part #2 Point 6
 
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
-const homeRouter = require('./src/routes/homerouter');
+const homeRouter = require('./src/routes/homerouter'); //part #1 point 3
 const booksRouter = require('./src/routes/booksroute');
 const authorsRouter = require('./src/routes/authorsroute');
 // const bodyParser = require('body-parser');
@@ -27,7 +27,7 @@ const app = new express;
 
 app.set('views','./src/views'); 
 app.set('view engine','ejs');
-app.use(cors());
+app.use(cors()); //Part #2 Point 7
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.json());
 
@@ -49,5 +49,5 @@ app.get('/',function(req,res){
 });
 
 app.listen(port, host, function() {
-    console.log("Server started.......");
+    console.log("Server ready on port number 5000"); //Part #1 Point 5
   });
